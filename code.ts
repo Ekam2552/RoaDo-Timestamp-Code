@@ -56,3 +56,29 @@ function calculateMonthlyStats(logEvents: LogEvent[]): MonthlyStats[] {
 
   return monthlyStats;
 }
+
+// Example usage
+const logEvents: LogEvent[] = [
+  {
+    userId: "user1",
+    logged_in: new Date("2023-01-01"),
+    logged_out: new Date("2023-01-02"),
+    lastSeenAt: new Date("2023-01-01"),
+  },
+  {
+    userId: "user2",
+    logged_in: new Date("2023-01-01"),
+    logged_out: null,
+    lastSeenAt: new Date("2023-01-03"),
+  },
+  {
+    userId: "user3",
+    logged_in: new Date("2023-02-01"),
+    logged_out: new Date("2023-02-02"),
+    lastSeenAt: new Date("2023-02-01"),
+  },
+  // Add more log events here
+];
+
+const monthlyStats = calculateMonthlyStats(logEvents);
+console.log(monthlyStats);
